@@ -1,0 +1,20 @@
+1. Roles for MQ: 
+                Producer     Sending the message
+				MQ Server    Receive the message from producer and hold it in Queue
+				Consumer     Receive the message from MQ server's Queue
+
+2. Work Flow:
+   Producer: 1. Get connection to MQ Server
+             2. Get channel from connection
+			 3. Declare Queue
+			 4. Publish message
+			 5. close connection
+   Consumer: 1. Get connection to MQ Server
+             2. Get channel from connection
+			 3. Declare Queue
+			 4. Define callback function
+			 5. Register the callback to channel
+			 6. Start channel to consuming
+3. Exchange Type: default(" ") fanout direct topic 
+
+4. Links: https://www.rabbitmq.com/tutorials/tutorial-one-python.html
