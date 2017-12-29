@@ -1,0 +1,4 @@
+1. ArrayList
+    When add a new item to ArrayList by list.add(obj), the new item will be add to the end of the list with the index of list.size() before it added
+    When add a new item to ArrayList by list.add(int i,obj), the new item will be add to the specified index i
+2. Iterator remove method can only call once after call next() method,it will remove the item returned by next()  from underlying collection
