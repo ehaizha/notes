@@ -1,0 +1,64 @@
+1. CGI -Common Gateway Interface VS servlet
+2.如何实现JSP或Servlet的单线程模式？
+答：
+对于JSP页面，可以通过page指令进行设置。
+
+<%@page isThreadSafe=”false”%>
+
+对于Servlet，可以让自定义的Servlet实现SingleThreadModel标识接口。
+
+说明：如果将JSP或Servlet设置成单线程工作模式，会导致每个请求创建一个Servlet实例，
+这种实践将导致严重的性能问题（服务器的内存压力很大，还会导致频繁的垃圾回收），所以通常情况下并不会这么做。
+
+3. Servlet 3中的异步处理指的是什么？
+答：在Servlet 3中引入了一项新的技术可以让Servlet异步处理请求。有人可能会质疑，既然都有多线程了，
+还需要异步处理请求吗？答案是肯定的，因为如果一个任务处理时间相当长，那么Servlet或Filter会一直占用着请求处理线程直到任务结束，
+随着并发用户的增加，容器将会遭遇线程超出的风险，这这种情况下很多的请求将会被堆积起来而后续的请求可能会遭遇拒绝服务，直到有资源可以处理请求为止。
+异步特性可以帮助应用节省容器中的线程，特别适合执行时间长而且用户需要得到结果的任务，如果用户不需要得到结果则直接将一个Runnable对象交给Executor并立即返回即可。
+
+补充：多线程在Java诞生初期无疑是一个亮点，而Servlet单实例多线程的工作方式也曾为其赢得美名，然而技术的发展往往会颠覆我们很多的认知，
+就如同当年爱因斯坦的相对论颠覆了牛顿的经典力学一般。事实上，异步处理绝不是Serlvet 3首创，如果你了解Node.js的话，对Servlet 3的这个重要改进就不以为奇了。
+
+下面是一个支持异步处理请求的Servlet的例子。
+
+import java.io.IOException;
+import javax.servlet.AsyncContext;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns = {"/async"}, asyncSupported = true)
+public class AsyncServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) 
+            throws ServletException, IOException {
+        // 开启Tomcat异步Servlet支持
+        req.setAttribute("org.apache.catalina.ASYNC_SUPPORTED", true);
+
+        final AsyncContext ctx = req.startAsync();  // 启动异步处理的上下文
+        // ctx.setTimeout(30000);
+        ctx.start(new Runnable() {
+
+            @Override
+            public void run() {
+                // 在此处添加异步处理的代码
+               //这里是真的比较耗时的业务代码
+
+                ctx.complete();//请求处理完成后，调用此方法，完成请求处理，并将结果返回给用户。
+            }
+        });
+    }
+}
+Links
+5. ThreadLocal each thread maintain a different local instance 
+6. joint point 连接点 is just the option of point cut
+    Point cut is the really point of advice
+   Advice
+   Aspect
+
+7. java dynamic proxy only support common interface proxy   Proxy InvokerHandler
+    CGlib support both interface and inherit proxy 
