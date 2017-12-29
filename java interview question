@@ -1,0 +1,17 @@
+ String intern method return the string in the string constant pool
+2. Enum can has construction methode, instance field and method
+    Enum's parent class has the values(),valueOf(),toString method
+    Links
+3. The usage of default construction method of object 
+    Links
+4. Exception catch and re-throw, if in the catch block, do some logic and then re-threw it, it not change the Exception type.
+   See attachment Human.java 
+   The output is :
+     Caught Annoyance
+     Caught Sneeze
+     Hello World!
+5. TreeSet backed on TreeMap 
+    TreeMap based on black-red tree
+
+6. Bubble sort
+  https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif
