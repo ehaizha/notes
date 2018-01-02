@@ -1,0 +1,2 @@
+websocket: long connectiong; asynchronized
+Now IE not support websocket, the work round solution is to use Socket.io 
