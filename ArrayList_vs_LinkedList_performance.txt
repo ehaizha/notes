@@ -5,6 +5,12 @@ import java.util.*;
  * to test the performance of LinkedList and ArrayList
  * conclusion: when create the list with existing list
  * the Arraylist is more fast then LinkedList
+ * 
+ * this is the output:
+ * 150
+ * 204
+ * 140
+ * 1
  *
  */
 public class ListTest {
