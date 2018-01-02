@@ -1,0 +1,49 @@
+import java.util.*;
+/**
+ * 
+ * @author Ronnie
+ * to test the performance of LinkedList and ArrayList
+ * conclusion: when create the list with existing list
+ * the Arraylist is more fast then LinkedList
+ *
+ */
+public class ListTest {
+	
+	public static void main(String[] args) {
+		//create new array list and add the element to it 
+		List<Integer> one = new ArrayList<>();
+		int t = 1000000;
+		long st = System.currentTimeMillis();
+		for(int i=0;i<t;i++) {
+			one.add(i);
+		}
+		long ed = System.currentTimeMillis();
+		System.out.println(ed-st);
+		
+		//create new linked list and add the element to it 
+		List<Integer> two = new LinkedList<>();
+		 st = System.currentTimeMillis();
+		for(int i=0;i<t;i++) {
+			two.add(i);
+		}
+		
+		ed = System.currentTimeMillis();
+		System.out.println(ed-st);
+		
+		//create new linked list with other list
+		st = System.currentTimeMillis();
+		List<Integer> third = new LinkedList<>(one);
+		ed = System.currentTimeMillis();
+		System.out.println(ed-st);
+		
+		
+		//Create new array list with other list
+		st = System.currentTimeMillis();
+		List<Integer> four = new ArrayList<>(one);
+		ed = System.currentTimeMillis();
+		System.out.println(ed-st);
+		
+		
+	}
+
+}
