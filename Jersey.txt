@@ -1,0 +1,2 @@
+1. Jersey implement the java RESTFUL specification(JAX-RS API JSR367)
+2. Link: http://www.jdon.com/soa/jersey.html

@@ -1,0 +1,10 @@
+1. Redis is the memory database
+2. Redis store the data in the format Key-Value
+3. The Key is the string type
+4. The Value are one of the five tyep:
+      a. String   it is the simple format  key-value  such as k1=v1
+	  b. Hash     it likes the Hashmap in Java
+	  c. List     it likes the LinkedList in Java
+	  d. Set      it likes the HashSet in Java
+	  e. Zset     it is set with the element in order
+5. Link: http://try.redis.io/
