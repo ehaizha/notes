@@ -1,0 +1,4 @@
+1. Lucene to Solr is same as engine to Car
+2. Lucene is a java jar file, solr is a war file, it can deployed to web container
+3. Both Solr and ElasticSearch are based on Lucene
+4. ES provides RESTFul API 
