@@ -1,0 +1,29 @@
+1. Keep reading existing source code 
+
+2. Complete your document before next step
+   Where is the Requirements Specification?
+   Where is the Impact Analysis Document?
+   Where is the Design Document?
+   Have you documented all the assumptions, limitations properly?
+   Have you done review of all the documents?
+   Did you get sign off on all the documents from all the stakeholders?
+3. Follow the defined standards, don't create it
+
+4. Code should be written to be reviewed
+
+5. Testing to be followed like a religion
+   If you don't want to follow it, you will be in trouble.
+   Celebrate every bug you find:
+     Bugs are your enemies, so you have killed one.
+	 Now your software is having one bug less.
+	 Mistakes are good as long as they are not repeating.
+	 What you learn today, prepares you for tomorrow
+	 
+
+6. Keep your code and document safe
+
+7. Keep your tools&techniques handy
+
+8. Leaving the ego behind, be eager to learn   
+
+Link:https://www.tutorialspoint.com/developers_best_practices/index.htm

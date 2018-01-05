@@ -1,0 +1,2 @@
+1.MyBatis support dynamic sql
+2. MyBatis support annotation(same functionality as xml configuration)

@@ -1,0 +1,25 @@
+1. SQL command:
+   DDL - Data Definition Language
+      CREATE    ALTER   DROP
+   DML - Data Manipulation Language
+      SELECT  INSERT   UPDATE  DELETE
+   DCL - Data Control Language
+      GRANT  REVOKE
+2. SELECT FROM WHERE GROUP BY HAVING ORDER BY
+   SQL > SELECT ID, NAME, AGE, ADDRESS, SALARY
+         FROM CUSTOMERS
+         GROUP BY age
+         HAVING COUNT(age) >= 2;
+
+3. Since MYSQL 3.23, it support temporary table
+   The table will be drop after the user session terminated
+
+4. EXPLAIN show the detail of how the data base using index
+   
+
+5. Links: http://www.cnblogs.com/hustcat/archive/2009/10/28/1591648.html
+          http://blog.csdn.net/dbadream/article/details/38739251
+
+6. show processlist
+   the function like the command on OS to list all the process
+      
