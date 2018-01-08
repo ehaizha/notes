@@ -1,0 +1,13 @@
+1. fork and join
+   To support the fork and join in multiple thread java provide the following class:
+   
+   java.util.concurrent.RecursiveTask: with return value, it implement the java.util.concurrent.Future and java.io.Serializable interface
+   java.util.concurrent.RecursiveAction: without return value
+   User extend one of the about class to implement the fork and join logic.
+   Use fork() method to divide the task to small task
+   Use join() method to get the result
+   
+   java.util.concurrent.ForkJoinPool
+   use the pool to invoke the forkjointask or forkjoinaction
+   
+   

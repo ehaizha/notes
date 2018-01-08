@@ -1,0 +1,7 @@
+1. 90% of the world’s data was generated in the last few years
+2.The MapReduce framework operates on <key, value> pairs, that is, the framework views the input to the job as a set of <key, value> pairs and produces a set of <key, value> pairs as the output of the job, conceivably of different types.
+3. Hadoop:
+         Map-reduce
+         distribute file system
+4. Hadoop stream is used to integerated with other program
+    Hadoop Streaming enables us to write map and reduce functions in any programming or scripting language that supports reading data from standard input and writing to standard output.
