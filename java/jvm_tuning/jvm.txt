@@ -1,0 +1,22 @@
+1. JVM flavors
+   The Sun JVM understands the options -classic, -client and -server
+    classic : disables the Hotspot JIT compiler.
+	client (default): activates the Hotspot JIT for "client" applications.
+	server: activates the "server" Hotspot JIT: it requires a fair amount of time to warm up, but delivers best performance for server.
+	Don't forget that, if you use them, -server or -client must be the first argument to Java. 
+2. Infant mortality in Java
+	Most of the objects (80%) in a typical Java application die young, But this may not be  true for your application. 
+	Hence there is a need to figure out this rough infant mortality number so that you can tune the JVM accordingly.
+3.        1
+	------------    Amdahl's law
+	F + (1-F)/N	
+4. java.lang.OutOfMemoryError:  .... Out of swap space ...
+
+	JNI Heap runs low on memory, even though the JavaHeap and the PermGen have memory. This typically happens if you are  meking lots of heavy JNI calls, but the JavaHeap objects occupy little space. In that scenario the GC might not feel the urge to cleanup JavaHeap, while the JNI Heap keeps on increasing till it goes out of memory.
+
+	If you use java NIO packages, watch out for this issue. DirectBuffer allocation uses the native heap.
+
+	The NativeHeap can be increasded by -XX:MaxDirectMemorySize=256M (default is 128)	
+	
+5. Links:
+		https://dzone.com/articles/java-performance-tuning
