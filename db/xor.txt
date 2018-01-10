@@ -1,0 +1,2 @@
+1. if a virable has two possible value aa or bb
+   then aa^bb^a swap a's value

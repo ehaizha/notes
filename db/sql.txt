@@ -22,4 +22,23 @@
 
 6. show processlist
    the function like the command on OS to list all the process
+   
+7. Limit claus:
+   SELECT * FROM table   LIMIT [offset,] rows | rows OFFSET offset
+   SELECT * FROM table LIMIT 5,10; // return rows 6-15 
+   SELECT * FROM table LIMIT 95,-1; // return 96-Last.
+   SELECT * FROM table LIMIT 5// return the first 5 rows
+   SELECT * FROM table LIMIT 0,5// return the first 5 rows   
+8. user virable in sql sytax:
+   @var_name
+   @var_name:=value
+   
+   select 
+     Score,
+     @rank := @rank + (@prev <> (@prev := Score)) Rank
+   from 
+     Scores,
+    (select @rank:=0,@prev:=-1) init
+   order by Score desc
+   
       
