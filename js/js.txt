@@ -1,0 +1,17 @@
+1. javascript use prototype to implement inherit
+2. (function(p1,p2){alert(p1+p2);})(1,2);
+   anonymous inner class. immediatally execute it.
+   
+3. function toString()
+   //the following code will print " function foo () { var x = 0; }"
+   function foo () { var x = 0; }
+   console.log(foo.toString());
+4. delete property of Object myObj
+   delete myObj.myPro
+5. JQuery provides covenient way to mutipulate dom object
+6. Angular provides a front end mvc framework
+   ng-app
+   ng-controller
+   ng-model
+   ng-bind
+      

@@ -1,0 +1,118 @@
+<html>
+<head>
+<script type="text/javascript">
+function Plant () {
+this.country = "Mexico";
+this.isOrganic = true;
+}
+
+// Add the showNameAndColor method to the Plant prototype property
+Plant.prototype.showNameAndColor =  function () {
+console.log("I am a " + this.name + " and my color is " + this.color);
+}
+
+// Add the amIOrganic method to the Plant prototype property
+Plant.prototype.amIOrganic = function () {
+if (this.isOrganic)
+console.log("I am organic, Baby!");
+}
+
+function Fruit (fruitName, fruitColor) {
+this.name = fruitName;
+this.color = fruitColor;
+}
+
+// Set the Fruit's prototype to Plant's constructor, thus inheriting all of Plant.prototype methods and properties.
+Fruit.prototype = new Plant ();
+
+// Creates a new object, aBanana, with the Fruit constructor
+var aBanana = new Fruit ("Banana", "Yellow");
+
+// Here, aBanana uses the name property from the aBanana object prototype, which is Fruit.prototype:
+console.log(aBanana.name); // Banana
+
+// Uses the showNameAndColor method from the Fruit object prototype, which is Plant.prototype. The aBanana object inherits all the properties and methods from both the Plant and Fruit functions.
+console.log(aBanana.showNameAndColor()); // I am a Banana and my color is yellow.
+
+ //anonymous inner class and execute immediatally
+ 
+ (function(p1,p2){alert(p1+p2);})(1,2);
+ 
+ //keys
+ 
+ // simple array
+var arr = ['a', 'b', 'c'];
+console.log(Object.keys(arr)); // console: ['0', '1', '2']
+
+// array like object
+var obj = { 0: 'a', 1: 'b', 2: 'c' };
+console.log(Object.keys(obj)); // console: ['0', '1', '2']
+
+// array like object with random key ordering
+var anObj = { 100: 'a', 2: 'b', 7: 'c' };
+console.log(Object.keys(anObj)); // console: ['2', '7', '100']
+
+// getFoo is a property which isn't enumerable
+var myObj = Object.create({}, {
+  getFoo: {
+    value: function () { return this.foo; }
+  } 
+});
+myObj.foo = 1;
+myObj.xoo = 2;
+console.log(Object.keys(myObj)); // console: ['foo']
+
+
+//splice
+
+var myFish = ['angel', 'clown', 'mandarin', 'sturgeon'];
+
+myFish.splice(2, 0, 'drum'); // insert 'drum' at 2-index position
+// myFish is ["angel", "clown", "drum", "mandarin", "sturgeon"]
+
+myFish.splice(2, 1); // remove 1 item at 2-index position (that is, "drum")
+// myFish is ["angel", "clown", "mandarin", "sturgeon"]
+
+
+//iterate object properties
+var obj = {a: 1, b: 2, c: 3};
+    
+for (const prop in obj) {
+  console.log(`obj.${prop} = ${obj[prop]}`);
+}
+
+// Output:
+// "obj.a = 1"
+// "obj.b = 2"
+// "obj.c = 3"
+
+
+//hasOwnProperties
+var triangle = {a: 1, b: 2, c: 3};
+
+function ColoredTriangle() {
+  this.color = 'red';
+}
+
+ColoredTriangle.prototype = triangle;
+
+var obj = new ColoredTriangle();
+
+for (const prop in obj) {
+  if (obj.hasOwnProperty(prop)) {
+    console.log(`obj.${prop} = ${obj[prop]}`);
+  } 
+}
+
+// Output:
+// "obj.color = red"
+
+//function toString
+function foo () { var x = 0; }
+console.log(foo.toString());
+
+</script>
+</head>
+<body>
+</body>
+</html>
