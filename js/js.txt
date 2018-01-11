@@ -14,4 +14,16 @@
    ng-controller
    ng-model
    ng-bind
-      
+7. == vs ===
+	Using the == operator (Equality)
+
+	true == 1; //true, because 'true' is converted to 1 and then compared
+	"2" == 2;  //true, because "2" is converted to 2 and then compared
+	Using the === operator (Identity)
+
+	true === 1; //false
+	"2" === 2;  //false
+	This is because the equality operator == does type coercion, meaning that the interpreter implicitly tries to convert the values before comparing.
+
+	On the other hand, the identity operator === does not do type coercion, and thus does not convert the values when comparing. 
+		  
