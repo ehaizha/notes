@@ -1,0 +1,5 @@
+1. sychronized can nested
+   sychronized(lock1){
+	sychronized(lock2){
+	}
+   }
