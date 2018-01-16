@@ -1,0 +1,10 @@
+1. Reactor is a lightweight library for reactive programming. 
+   It provides reactive variables which automatically update 
+   themselves when the things they depend on change. This is
+   similar to how a spreadsheet works, where cells can automatically 
+   change their own values in reaction to changes in other cells.
+
+2. Reactor has just 2 components: signals and observers
+
+   Signals are values that are expected to change over time. Signals can depend on each other.
+   Observers are functions which are triggered on signal changes.

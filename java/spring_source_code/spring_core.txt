@@ -34,3 +34,16 @@
 6.  String.format(String format, Object...args)
 	System.out.println(String.format("Test for %s and there has total %d test cases", "String format",1));
 	output:Test for String format and there has total 1 test cases
+
+7.  Spring @Profile allow developers to register beans by condition. 
+    For example, register beans based on what operating 
+	system (Windows, *nix) your application is running, 
+	or load a database properties file based on the application 
+	running in development, test, staging or production environment.
+8.  org.springframework.core.env.Environment extends org.springframework.core.env.PropertyResolver
+    add profile support function.
+9.  org.springframework.context.ApplicationContext extend org.springframework.core.env.Environment
+
+10. Prototype scope = A new object is created each time it is injected/looked up. It will use new SomeClass() each time.
+    Singleton scope = (Default) The same object is returned each time it is injected/looked up. 
+	Here it will instantiate one instance of SomeClass and then return it each time.
