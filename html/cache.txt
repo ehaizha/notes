@@ -1,0 +1,19 @@
+Expires, ETag, Last-Modified, and Cache-Control
+ <link rel="dns-prefetch" href="//host_name_to_prefetch.com"> rel is abbrevation of relationship
+ <link rel="prerender" href="http://example.org/index.html">
+ dns-prefetch means let the browser to do the dns search for this href
+ rerender means let the browser fetch the page in advance in a hidden page.
+ 
+ Expires:
+ Gives the date/time after which the response is considered stale 
+ (in "HTTP-date" format as defined by RFC 7231)	
+ Expires: Thu, 01 Dec 1994 16:00:00 GMT
+ The http server can configured by file type or concrete page set the 
+ Expires header
+ 
+ data URI: encoding the binary file or text to ASCII text string
+ benifit: reduce the http request to server
+ shortage: 
+         a. no cache for the specific resource
+		 b. browser will not display the page until of resource downloaded
+		 c. once change the resource need to re-encoded it
