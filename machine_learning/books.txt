@@ -1,0 +1,23 @@
+Machine Learning
+http://www.cs.ubbcluj.ro/~gabis/ml/ml-books/McGrawHill%20-%20Machine%20Learning%20-Tom%20Mitchell.pdf
+Elements of Statistical Learning
+https://web.stanford.edu/~hastie/Papers/ESLII.pdf
+Pattern Recognition and Machine Learning
+http://users.isr.ist.utl.pt/~wurmd/Livros/school/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf
+Information Theory, Inference and Learning Algorithms
+http://www.inference.org.uk/itprnn/book.pdf
+
+Introduction to Linear Algebra
+https://math.mit.edu/~gs/linearalgebra/linearalgebra5_Preface.pdf
+Linear Algebra and its Applications
+http://www.zuj.edu.jo/download/linear-algebra-and-its-applications-david-c-lay-pdf/
+A First Course in Probability（8th edition）
+http://julio.staff.ipb.ac.id/files/2015/02/Ross_8th_ed_English.pdf
+Probability Theory: The Logic of Science
+http://www.med.mcgill.ca/epidemiology/hanley/bios601/GaussianModel/JaynesProbabilityTheory.pdf
+Statistical Inference
+https://fsalamri.files.wordpress.com/2015/02/casella_berger_statistical_inference1.pdf
+Convex Optimization
+https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf
+Elements of Information Theory
+http://www.cs-114.org/wp-content/uploads/2015/01/Elements_of_Information_Theory_Elements.pdf
