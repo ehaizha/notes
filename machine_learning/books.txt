@@ -9,8 +9,7 @@ http://www.inference.org.uk/itprnn/book.pdf
 
 Introduction to Linear Algebra
 https://math.mit.edu/~gs/linearalgebra/linearalgebra5_Preface.pdf
-Linear Algebra and its Applications
-http://www.zuj.edu.jo/download/linear-algebra-and-its-applications-david-c-lay-pdf/
+
 A First Course in Probability（8th edition）
 http://julio.staff.ipb.ac.id/files/2015/02/Ross_8th_ed_English.pdf
 Probability Theory: The Logic of Science

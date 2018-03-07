@@ -1,9 +1,9 @@
-1.  HTTP pipelining is a technique in which multiple HTTP 
+.  HTTP pipelining is a technique in which multiple HTTP 
     requests are written out to a single socket without 
 	waiting for the corresponding responses. Pipelining 
 	is only supported in HTTP/1.1, not in 1.0
 	
-2.  Tomcat keep alive configure in server.xml
+.  Tomcat keep alive configure in server.xml
     keepAliveTimeout：
     The number of milliseconds this Connector will wait 
 	for another HTTP request before closing the connection. 
@@ -15,4 +15,31 @@
 	attribute to 1 will disable HTTP/1.0 keep-alive, as well 
 	as HTTP/1.1 keep-alive and pipelining. Setting this to -1 
 	will allow an unlimited amount of pipelined or keep-alive 
-	HTTP requests. If not specified, this attribute is set to 100.	
+	HTTP requests. If not specified, this attribute is set to 100.
+
+.  A major difference between HTTP/1.0 and HTTP/1.1 is that 
+   HTTP/1.0 uses a new connection for each request/response 
+   exchange, where as HTTP/1.1 connection may be used for one 
+   or more request/response exchanges.	
+
+.  Basic Feature
+   .HTTP is media independent: It means, any type of data can be 
+	sent by HTTP as long as both the client and the server know 
+	how to handle the data content. It is required for the client 
+	as well as the server to specify the content type using appropriate MIME-type.
+
+  .HTTP is stateless: As mentioned above, HTTP is connectionless and it is a direct 
+   result of HTTP being a stateless protocol. The server and client are aware of each 
+   other only during a current request. Afterwards, both of them forget about each other. 
+   Due to this nature of the protocol, neither the client nor the browser can retain 
+   information between different requests across the web pages.
+
+.  HTTP header types: 
+    a. General-header: These header fields have general applicability for both request and response messages.
+
+    b. Request-header: These header fields have applicability only for request messages.
+
+    c. Response-header: These header fields have applicability only for response messages.
+
+    d. Entity-header: These header fields define meta information about the entity-body or, 
+	   if no body is present, about the resource identified by the request.

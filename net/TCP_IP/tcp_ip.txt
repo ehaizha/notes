@@ -1,0 +1,5 @@
+. ARP/RARP get MAC address from ip address and revers
+. ICMP when there network issue, ICMP send message to sender
+. traceroute/tracert(windows) First sent a UDP package with TTL=1
+  the first router receive the package, TTL--, then send a ICMP to
+  sender,after receive the ICMP, send another UDP package with TTL=2
