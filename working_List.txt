@@ -1,0 +1,8 @@
+core java
+algorithom
+spring ioc/aop
+spring boot
+spring cloud
+database/sql
+javascript
+python

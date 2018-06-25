@@ -47,3 +47,5 @@
 10. Prototype scope = A new object is created each time it is injected/looked up. It will use new SomeClass() each time.
     Singleton scope = (Default) The same object is returned each time it is injected/looked up. 
 	Here it will instantiate one instance of SomeClass and then return it each time.
+	
+11. java template	
