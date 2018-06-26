@@ -1,0 +1,35 @@
+1. Concurrency vs. Parallelism In Detail
+  a.concurrency is related to how an application handles 
+    multiple tasks it works on. An application may process 
+    one task at at time (sequentially) or work on multiple 
+    tasks at the same time (concurrently).
+
+  b.Parallelism on the other hand, is related to how an 
+    application handles each individual task. 
+	An application may process the task serially 
+	from start to end, or split the task up into subtasks 
+	which can be completed in parallel
+2. Race conditions occur only if multiple threads are accessing 
+   same resource, and one or more of the threads write to the resource.
+   If multiple threads read the same resource race conditions do not occur.	
+3. Don't use global objects, string constants etc. 
+   for wait() / notify() mechanisms. Use an object that is unique to 
+   the construct using it. For instance, each MyWaitNotify3 
+   (example from earlier sections) instance has its own MonitorObject 
+   instance rather than using the empty string for wait() / notify() calls.  
+
+4. In deadlock, two threads are waiting for each other to release locks.
+   In nested monitor lockout, Thread 1 is holding a lock A, and waits  
+   for a signal from Thread 2. Thread 2 needs the lock A to send the signal to Thread 1. 
+
+5. Slipped conditions means, that from the time a thread has checked a certain 
+   condition until it acts upon it, the condition has been changed by another 
+   thread so that it is errornous for the first thread to act.  
+
+6. Reentrant lock
+   If a thread already holds the lock on a monitor object, 
+   it has access to all blocks synchronized on the same monitor object.
+   This is called reentrance. The thread can reenter any block of code for 
+   which it already holds the lock. 
+
+7. Calling unlock() From a finally-clause   

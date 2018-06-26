@@ -1,0 +1,21 @@
+1. java.util.Optional
+   Java 8 introduces a new class called java.util.Optional<T> that
+   represents encapsulation of an optional value.
+   Instead of returning the value directly, 
+   a wrapper object is returned so that we don’t get 
+   into the trap of NullpointerException
+2. Default method
+
+3. stream
+   filter,sort,map,forEach,collect
+   
+4. Lambda
+   a. A lambda definition is a method kind of code without a name.
+   b. It lacks a return type, a throws clause, and a name. Why?
+      Main reason is to simplify code so that one can simply pass the 
+      function the way we pass data.
+   c. Return type and exceptions are inferred by the compiler from the 
+      lambda body. If there is a possibility, the compiler can infer even 
+	  the argument types.
+   d. A functional interface is an interface with a single abstract method
+   e. If you want to use the lambda expression, the target type must be a functional interface   
