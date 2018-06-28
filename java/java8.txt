@@ -7,7 +7,7 @@
 2. Default method
 
 3. stream
-   filter,sort,map,forEach,collect
+   filter,sort,map,forEach,collect,parallel,flatMap,reduce
    
 4. Lambda
    a. A lambda definition is a method kind of code without a name.

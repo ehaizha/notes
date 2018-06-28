@@ -1,0 +1,31 @@
+1. Collections.synchronizedList(List list) method
+   the synchronized list by Collections are thread-safe, 
+   but the compound actions to these collections are not guaranteed to be thread-safe by default.
+   According to JCIP, the common compound actions can be
+     iteration
+	 navigation
+	 put-if-absent
+	 check-then-act
+
+   For example from JCIP and modify it a little to clarify why it's necessary to 
+   guard the compound actions with lock.
+   There are two methods that operate on same collection list that wrapped by
+   Collections.synchronizedList
+      public Object getLast(List<String> list){
+          int lastIndex = list.size() - 1;
+          return list.get(lastIndex);
+       }
+
+      public void deleteLast(List<String> list){
+          int lastIndex = list.size() - 1;
+          list.remove(lastIndex);
+      }
+   If methods getLast and deleteLast are called at the same time by two different threads, 
+   below interleaves may happen and getLast will throw ArrayIndexOutOfBoundsException. 
+   Assume current lastIndex is 10.
+
+       Thread A (deleteLast) --> remove
+	   Thread B (getLast) --------------------> get
+   The Thread A remove the element before the get operation in Thread B. 
+   Thus, the Thread B still use 10 as the lastIndex to call list.get method, 
+   it will lead to concurrent problem.

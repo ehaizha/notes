@@ -1,0 +1,40 @@
+1. command
+   jstat  -gc pid
+2. sample output of jstat   
+	   S0C    S1C    S0U    S1U      EC       EU        OC         OU       PC     PU         YGC    YGCT   FGC     FGCT     GCT
+       1024.0 1024.0  0.0    0.0    8192.0   7933.3   42108.0    23401.3   20480.0 19990.9    157    0.274  40      1.381    1.654
+       1024.0 1024.0  0.0    0.0    8192.0   8026.5   42108.0    23401.3   20480.0 19990.9    157    0.274  40      1.381    1.654
+       1024.0 1024.0  0.0    0.0    8192.0   8030.0   42108.0    23401.3   20480.0 19990.9    157    0.274  40      1.381    1.654
+       1024.0 1024.0  0.0    0.0    8192.0   8122.2   42108.0    23401.3   20480.0 19990.9    157    0.274  40      1.381    1.654
+       1024.0 1024.0  0.0    0.0    8192.0   8171.2   42108.0    23401.3   20480.0 19990.9    157    0.274  40      1.381    1.654
+       1024.0 1024.0  48.7   0.0    8192.0   106.7    42108.0    23401.3   20480.0 19990.9    158    0.275  40      1.381    1.656
+       1024.0 1024.0  48.7   0.0    8192.0   145.8    42108.0    23401.3   20480.0 19990.9    158    0.275  40      1.381    1.656
+	   
+3. explanation
+   a. S0C and S1C
+      This column shows the current size of the Survivor0 and Survivor1 areas in KB.
+   b. S0U and S1U
+      This column shows the current usage of the Survivor0 and Survivor1 areas in KB. 
+      Notice that one of the survivor areas are empty all the time.
+   c. EC and EU
+      These columns show the current size and usage of Eden space in KB. Note that EU 
+      size is increasing and as soon as it crosses the EC, Minor GC is called and EU 
+	  size is decreased.
+   d. OC and OU
+      These columns show the current size and current usage of Old generation in KB.
+   e. PC and PU
+      These columns show the current size and current usage of Perm Gen in KB.
+   f. YGC and YGCT
+      YGC column displays the number of GC event occurred in young generation. 
+      YGCT column displays the accumulated time for GC operations for Young generation. 
+	  Notice that both of them are increased in the same row where EU value is dropped 
+	  because of minor GC.
+   g. FGC and FGCT
+      FGC column displays the number of Full GC event occurred. FGCT column displays 
+      the accumulated time for Full GC operations. Notice that Full GC time is too high
+	  when compared to young generation GC timings.
+   h. GCT
+      This column displays the total accumulated time for GC operations. Notice that it’s sum 
+      of YGCT and FGCT column values.
+4. jvisualvm can collect the information of running jvm and show them in its ui.
+   it is shipped together with jdk.  
